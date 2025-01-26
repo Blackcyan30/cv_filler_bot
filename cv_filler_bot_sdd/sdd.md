@@ -19,23 +19,20 @@ The **CV Filler Bot** is a job application automation tool that automates form f
 ### **Core Features**
 
 1. **Automated Form Filling**
-
-   - Chrome extension extracts job portal data and sends it to the backend.
-   - Playwright automates form completion and submission.
-
+    
+    - Chrome extension extracts job portal data and sends it to the backend.
+    - Playwright automates form completion and submission.
 2. **Job Tracking**
-
-   - Uses Google Sheets API to store applications.
-   - Stores company, job title, location, recruiter contact, and application status.
-
+    
+    - Uses Google Sheets API to store applications.
+    - Stores company, job title, location, recruiter contact, and application status.
 3. **Dashboard**
-
-   - React-based UI for inputting personal details and tracking job applications.
-
+    
+    - React-based UI for inputting personal details and tracking job applications.
 4. **AI-Powered Predictions**
-
-   - Uses AWS SageMaker for ML-based form predictions.
-   - Queries external LLMs for additional responses.
+    
+    - Uses AWS SageMaker for ML-based form predictions.
+    - Queries external LLMs for additional responses.
 
 ---
 
@@ -44,6 +41,7 @@ The **CV Filler Bot** is a job application automation tool that automates form f
 ### **Frontend:**
 
 - React.js (UI for tracking applications)
+- Vite (Fast build system for React frontend)
 - AWS S3 + CloudFront (Hosting)
 - Chrome Extension (Data extraction from job portals)
 
@@ -146,33 +144,36 @@ graph TD
 ## **7. Git & GitHub Workflow**
 
 1. **Initialize the Repository**
-
-   ```bash
-   git init
-   git branch -M main
-   git remote add origin <your-repo-url>
-   ```
-
+    
+    ```bash
+    git init
+    git branch -M main
+    git remote add origin <your-repo-url>
+    ```
+    
 2. **Feature Branching**
-
-   - Create a branch for each feature:
-     ```bash
-     git checkout -b feature/front-end
-     ```
-   - Push changes:
-     ```bash
-     git add .
-     git commit -m "Added React frontend basic layout"
-     git push origin feature/front-end
-     ```
-   - Create a Pull Request (PR) and merge once reviewed.
-
+    
+    - Create a branch for each feature:
+        
+        ```bash
+        git checkout -b feature/front-end
+        ```
+        
+    - Push changes:
+        
+        ```bash
+        git add .
+        git commit -m "Initialized React frontend with Vite"
+        git push origin feature/front-end
+        ```
+        
+    - Create a Pull Request (PR) and merge once reviewed.
 3. **Commit Stages**
-
-   - **Project setup** → Initial commit.
-   - **Feature development** → Feature-specific commits.
-   - **Testing & Integration** → After API connections are validated.
-   - **Deployment** → Final commits before pushing to AWS.
+    
+    - **Project setup** → Initial commit.
+    - **Feature development** → Feature-specific commits.
+    - **Testing & Integration** → After API connections are validated.
+    - **Deployment** → Final commits before pushing to AWS.
 
 ---
 
@@ -180,20 +181,24 @@ graph TD
 
 ### **Frontend Deployment**
 
-1. **React Dashboard**:
-   ```bash
-   npm run build
-   aws s3 sync build/ s3://<your-bucket-name>
-   ```
+1. **React Dashboard (Vite-based)**:
+    
+    ```bash
+    npm run build
+    aws s3 sync build/ s3://<your-bucket-name>
+    ```
+    
 2. **Configure CloudFront for distribution**
 
 ### **Backend Deployment**
 
 1. **FastAPI Backend**:
-   ```bash
-   pip install -r requirements.txt
-   zip -r backend.zip .
-   ```
+    
+    ```bash
+    pip install -r requirements.txt
+    zip -r backend.zip .
+    ```
+    
 2. **Deploy to AWS Lambda or EC2**
 
 ### **Machine Learning Deployment**
@@ -210,28 +215,28 @@ graph TD
 
 ## **9. Risks and Mitigations**
 
-| **Risk**                   | **Cause**                     | **Mitigation**                         |
-| -------------------------- | ----------------------------- | -------------------------------------- |
-| **Inaccurate Predictions** | Insufficient ML training data | Use user feedback for retraining.      |
-| **AWS Free Tier Overuse**  | High operational load         | Monitor resources with AWS CloudWatch. |
-| **Parsing Failures**       | Job portal layout changes     | Implement dynamic selectors & logging. |
+|**Risk**|**Cause**|**Mitigation**|
+|---|---|---|
+|**Inaccurate Predictions**|Insufficient ML training data|Use user feedback for retraining.|
+|**AWS Free Tier Overuse**|High operational load|Monitor resources with AWS CloudWatch.|
+|**Parsing Failures**|Job portal layout changes|Implement dynamic selectors & logging.|
 
 ---
 
 ## **10. Future Enhancements**
 
 1. **Recruiter Suggestions**
-   - LinkedIn scraping for relevant recruiters.
+    - LinkedIn scraping for relevant recruiters.
 2. **Alumni Tracking**
-   - Connect with alumni based on job applications.
+    - Connect with alumni based on job applications.
 3. **AI-Generated Cover Letters**
-   - Use LLMs for customized cover letters.
+    - Use LLMs for customized cover letters.
 
 ---
 
 ## **11. Next Steps**
 
-1. **Set up frontend React structure**.
+1. **Set up frontend React structure with Vite**.
 2. **Initialize FastAPI backend with a test API endpoint**.
 3. **Test frontend-backend connection**.
 4. **Begin implementing Playwright automation**.
@@ -239,4 +244,3 @@ graph TD
 ---
 
 This document will be updated as development progresses. Let me know when you are ready to start implementation!
-
